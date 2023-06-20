@@ -1,12 +1,6 @@
-html {
-    background-color: aquamarine;
-    align-items: center;
+#student-form {
+    padding-top: 5%;
 }
-
-* {
-    margin: auto;
-}
-
-table, th, td {
-    border: 1px solid black;
+#student-img {
+    max-width: 15%;
 }
