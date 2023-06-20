@@ -1,0 +1,12 @@
+html {
+    background-color: aquamarine;
+    align-items: center;
+}
+
+* {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

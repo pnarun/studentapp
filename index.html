@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h2>Student Website</h2>
+    <p>A website to store basic details of all students</p>
+    <!-- main banner -->
+    <!-- <div id="heading">
+        <h2>Student Website</h2>
+        <p>A website to store basic details of all students</p>
+    </div> -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br><br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile"><br><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br><br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"><br><br><br>
+        <button onclick="addStudent()">Submit</button><br><br><br>
+    <!-- Read Student Details -->
+    <!-- <div id="addData">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br><br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile"><br><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br><br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state"><br><br><br>
+        <button onclick="addStudent()">Submit</button><br><br><br>
+    </div> -->
+
+    <!-- Display Student Details -->
+    <table id="display">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile Number</th>
+            <th>City</th>
+            <th>State</th>
+        </tr>
+    </table>
+
+    <!-- load javascript after loading all html content -->
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>
