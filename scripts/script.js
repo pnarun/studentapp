@@ -1,31 +1,25 @@
-var row = 1;
+// Use array to hold all student objects
+const students = [];
+// Add event listener instead of onclick
+const student_form = document.getElementById('student-form');
+student_form.addEventListener('submit', addStudent);
 
-function addStudent() {
-    var name = document.getElementById("name").value;
-    var age = document.getElementById("age").value;
-    var mobile = document.getElementById("mobile").value;
-    var city = document.getElementById("city").value;
-    var state = document.getElementById("state").value;
-
-    if(!name || !age || !mobile || !city || !state) {
-        alert("Please fill all fields.");
-        return;
+function addStudent(event) {
+    // prevent page from refreshing on clicking submit
+    event.preventDefault();
+    // fetch data in form_data object
+    const student_form_data = new FormData(event.target);
+    const student_info = {};
+    const student_table = document.getElementById("student-display");
+    // modifying tbody so that bootstrap classes such as table-striped work correctly
+    var newRow = student_table.getElementsByTagName('tbody')[0].insertRow();
+    // read data and store it in student_info object
+    for (const [key, value] of student_form_data.entries()) {
+        student_info[key] = value;
+        var cell = newRow.insertCell()
+        cell.innerHTML = value;
     }
-
-    var display = document.getElementById("display");
-
-    var newRow = display.insertRow(row);
-    var cell1 = newRow.insertCell(0);
-    var cell2 = newRow.insertCell(1);
-    var cell3 = newRow.insertCell(2);
-    var cell4 = newRow.insertCell(3);
-    var cell5 = newRow.insertCell(4);
-    
-    cell1.innerHTML = name;
-    cell2.innerHTML = age;
-    cell3.innerHTML = mobile;
-    cell4.innerHTML = city;
-    cell5.innerHTML = state;
-
-    row++;
+    students.push(student_info);
+    // clear form after reading info
+    student_form.reset();
 }

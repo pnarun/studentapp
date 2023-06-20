@@ -7,52 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- linking css file -->
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h2>Student Website</h2>
-    <p>A website to store basic details of all students</p>
-    <!-- main banner -->
-    <!-- <div id="heading">
-        <h2>Student Website</h2>
-        <p>A website to store basic details of all students</p>
-    </div> -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age"><br><br><br>
-        <label for="mobile">Mobile Number:</label>
-        <input type="number" id="mobile" name="mobile"><br><br><br>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city"><br><br><br>
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state"><br><br><br>
-        <button onclick="addStudent()">Submit</button><br><br><br>
-    <!-- Read Student Details -->
-    <!-- <div id="addData">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age"><br><br><br>
-        <label for="mobile">Mobile Number:</label>
-        <input type="number" id="mobile" name="mobile"><br><br><br>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city"><br><br><br>
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state"><br><br><br>
-        <button onclick="addStudent()">Submit</button><br><br><br>
-    </div> -->
+    <div class="container">
+        <h1 class="text-center display-3">Student Website</h1>
 
-    <!-- Display Student Details -->
-    <table id="display">
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Mobile Number</th>
-            <th>City</th>
-            <th>State</th>
-        </tr>
-    </table>
+        <div class="row justify-content-center">
+            <form id="student-form" class="col-6">
+                <legend class="text-center">Student Form</legend>
+                <img src="images/student.png" class="rounded mx-auto d-block" id="student-img" alt="An avatar of a student">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input class="form-control" type="text" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input class="form-control" type="number" id="age" name="age" min="15" max="25" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number:</label>
+                    <input class="form-control" type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City:</label>
+                    <input class="form-control" type="text" id="city" name="city" required>
+                </div>
+                <div class="mb-3">
+                    <label for="state" class="form-label">State:</label>
+                    <input class="form-control" type="text" id="state" name="state" required>
+                </div class="mb-3">
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <table id="student-display" class="table table-info table-bordered table-striped mt-5">
+            <legend class="text-center mt-5">Student Table</legend>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Mobile Number</th>
+                    <th>City</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
 
     <!-- load javascript after loading all html content -->
     <script src="scripts/script.js"></script>
