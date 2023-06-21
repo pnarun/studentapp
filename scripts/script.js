@@ -15,8 +15,28 @@ function addStudent(event) {
     var newRow = student_table.getElementsByTagName('tbody')[0].insertRow();
     // read data and store it in student_info object
     for (const [key, value] of student_form_data.entries()) {
-        student_info[key] = value;
-        var cell = newRow.insertCell()
+        if(key == 'date') {
+            var dob = new Date(value);
+            //calculate month difference from current date in time
+            var month_diff = Date.now() - dob.getTime();
+            
+            //convert the calculated difference in date format
+            var age_dt = new Date(month_diff); 
+            
+            //extract year from date    
+            var year = age_dt.getUTCFullYear();
+            
+            //now calculate the age of the user
+            var age = Math.abs(year - 1970);
+
+            student_info[key] = value;
+            student_info['age'] = age;
+            var cell = newRow.insertCell();
+            cell.innerHTML = age;            
+        } else {
+            student_info[key] = value;
+        }
+        var cell = newRow.insertCell();
         cell.innerHTML = value;
     }
     students.push(student_info);
